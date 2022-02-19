@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+   @{ 
+
+       var header = Html.Partial("myDetails");
+       header= new MvcHtmlString(header.ToString()+ "<Div><p> Created by : Pranjal Bhosale</p> <p> Center : juhu</p> <p> RollNo : 210450520059</p>")
+   }
+       
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+       @{Html.RenderPartial("View");}
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
